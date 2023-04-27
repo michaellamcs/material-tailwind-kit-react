@@ -1,43 +1,35 @@
-import { Home, Profile, SignIn, SignUp } from "@/pages";
+import { Home, Profile, Pricing, Environment } from "@/pages";
 import {
   HomeIcon,
-  UserCircleIcon,
-  ArrowRightOnRectangleIcon,
-  UserPlusIcon,
-  DocumentTextIcon,
+  CurrencyDollarIcon,
+  InformationCircleIcon,
+  BuildingLibraryIcon,
 } from "@heroicons/react/24/solid";
 
 export const routes = [
   {
     icon: HomeIcon,
-    name: "home",
+    name: "主頁",
     path: "/home",
     element: <Home />,
   },
   {
-    icon: UserCircleIcon,
-    name: "profile",
-    path: "/profile",
+    icon: BuildingLibraryIcon,
+    name: "環境設施",
+    path: "/environment",
+    element: <Environment />,
+  },
+  {
+    icon: CurrencyDollarIcon,
+    name: "收費",
+    path: "/pricing",
+    element: <Pricing />,
+  },
+  {
+    icon: InformationCircleIcon,
+    name: "關於我們",
+    path: "/about",
     element: <Profile />,
-  },
-  {
-    icon: ArrowRightOnRectangleIcon,
-    name: "Sign In",
-    path: "/sign-in",
-    element: <SignIn />,
-  },
-  {
-    icon: UserPlusIcon,
-    name: "Sign Up",
-    path: "/sign-up",
-    element: <SignUp />,
-  },
-  {
-    icon: DocumentTextIcon,
-    name: "Docs",
-    href: "https://www.material-tailwind.com/docs/react/installation",
-    target: "_blank",
-    element: "",
   },
 ];
 

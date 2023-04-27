@@ -3,19 +3,23 @@ import { Typography, IconButton } from "@material-tailwind/react";
 
 const year = new Date().getFullYear();
 
-export function Footer({ title, description, socials, menus, copyright }) {
+export function Footer({ title, description, phone, menus, copyright }) {
   return (
     <footer className="relative px-4 pt-8 pb-6">
       <div className="container mx-auto">
         <div className="flex flex-wrap pt-6 text-center lg:text-left">
-          <div className="w-full px-4 lg:w-6/12">
+          <div className="w-full mx-auto px-4 lg:w-6/12">
             <Typography variant="h4" className="mb-4" color="blue-gray">
               {title}
             </Typography>
-            <Typography className="font-normal text-blue-gray-500">
+            <Typography className="mb-4 font-normal text-blue-gray-500">
               {description}
             </Typography>
-            <div className="mx-auto mt-6 mb-8 flex justify-center gap-2 md:mb-0 lg:justify-start">
+            <Typography className="font-normal text-black">
+              {phone}
+            </Typography>
+
+            {/* <div className="mx-auto mt-6 mb-8 flex justify-center gap-2 md:mb-0 lg:justify-start">
               {socials.map(({ color, name, path }) => (
                 <a
                   key={name}
@@ -30,9 +34,10 @@ export function Footer({ title, description, socials, menus, copyright }) {
                   </IconButton>
                 </a>
               ))}
-            </div>
+            </div> */}
+
           </div>
-          <div className="mx-auto mt-12 grid w-max grid-cols-2 gap-24 lg:mt-0">
+          <div className="mx-auto mt-12 w-max gap-24 lg:mt-0">
             {menus.map(({ name, items }) => (
               <div key={name}>
                 <Typography
@@ -79,90 +84,86 @@ export function Footer({ title, description, socials, menus, copyright }) {
 }
 
 Footer.defaultProps = {
-  title: "Material Tailwind",
+  title: "石籬惠安護老院",
   description:
-    "Easy to use React components for Tailwind CSS and Material Design.",
-  socials: [
-    {
-      color: "blue",
-      name: "facebook",
-      path: "https://www.facebook.com/CreativeTim",
-    },
-    {
-      color: "light-blue",
-      name: "twitter",
-      path: "https://www.twitter.com/creativetim",
-    },
-    {
-      color: "purple",
-      name: "instagram",
-      path: "https://www.instagram.com/creativetimofficial/",
-    },
-    {
-      color: "pink",
-      name: "dribbble",
-      path: "https://www.dribbble.com/creativetim",
-    },
-    {
-      color: "red",
-      name: "youtube",
-      path: "https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w",
-    },
-    {
-      color: "black",
-      name: "github",
-      path: "https://github.com/creativetimofficial/material-tailwind",
-    },
-  ],
+    "牌照事務處檔案號碼: L1247",
+    phone: "電話：2155 3091",
+  // socials: [
+  //   {
+  //     color: "blue",
+  //     name: "facebook",
+  //     path: "https://www.facebook.com/CreativeTim",
+  //   },
+  //   {
+  //     color: "light-blue",
+  //     name: "twitter",
+  //     path: "https://www.twitter.com/creativetim",
+  //   },
+  //   {
+  //     color: "purple",
+  //     name: "instagram",
+  //     path: "https://www.instagram.com/creativetimofficial/",
+  //   },
+  //   {
+  //     color: "pink",
+  //     name: "dribbble",
+  //     path: "https://www.dribbble.com/creativetim",
+  //   },
+  //   {
+  //     color: "red",
+  //     name: "youtube",
+  //     path: "https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w",
+  //   },
+  //   {
+  //     color: "black",
+  //     name: "github",
+  //     path: "https://github.com/creativetimofficial/material-tailwind",
+  //   },
+  // ],
   menus: [
     {
-      name: "useful links",
+      name: "相關連結",
       items: [
-        { name: "About Us", path: "https://www.creative-tim.com/presentation" },
-        { name: "Blog", path: "https://www.creative-tim.com/blog" },
+        { name: "關於我們", path: "http://localhost:5173/profile" },
+        { name: "社會褔利署署", path: "https://www.swd.gov.hk/tc/index/site_pubsvc/page_elderly/" },
         {
-          name: "Github",
-          path: "https://www.github.com/creativetimofficial/material-tailwind?ref=mtk",
-        },
-        {
-          name: "Free Products",
-          path: "https://www.creative-tim.com/templates/free?ref=mtk",
+          name: "香港老年學會",
+          path: "https://www.hkag.org/",
         },
       ],
     },
-    {
-      name: "other resources",
-      items: [
-        {
-          name: "MIT License",
-          path: "https://github.com/creativetimofficial/material-tailwind/blob/main/LICENSE.md?ref=mtk",
-        },
-        {
-          name: "Contribute",
-          path: "https://github.com/creativetimofficial/material-tailwind/blob/main/CONTRIBUTING.md?ref=mtk",
-        },
-        {
-          name: "Change Log",
-          path: "https://github.com/creativetimofficial/material-tailwind/blob/main/CHANGELOG.md?ref=mtk",
-        },
-        {
-          name: "Contact Us",
-          path: "https://creative-tim.com/contact-us?ref=mtk",
-        },
-      ],
-    },
+    // {
+    //   name: "other resources",
+    //   items: [
+    //     {
+    //       name: "MIT License",
+    //       path: "https://github.com/creativetimofficial/material-tailwind/blob/main/LICENSE.md?ref=mtk",
+    //     },
+    //     {
+    //       name: "Contribute",
+    //       path: "https://github.com/creativetimofficial/material-tailwind/blob/main/CONTRIBUTING.md?ref=mtk",
+    //     },
+    //     {
+    //       name: "Change Log",
+    //       path: "https://github.com/creativetimofficial/material-tailwind/blob/main/CHANGELOG.md?ref=mtk",
+    //     },
+    //     {
+    //       name: "Contact Us",
+    //       path: "https://creative-tim.com/contact-us?ref=mtk",
+    //     },
+    //   ],
+    // },
   ],
   copyright: (
     <>
-      Copyright © {year} Material Tailwind by{" "}
-      <a
+      Copyright © {year} 石籬惠安護老院
+      {/* <a
         href="https://www.creative-tim.com?ref=mtk"
         target="_blank"
         className="text-blue-gray-500 transition-colors hover:text-blue-500"
       >
         Creative Tim
-      </a>
-      .
+      </a> */}
     </>
   ),
 };
@@ -170,7 +171,8 @@ Footer.defaultProps = {
 Footer.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  socials: PropTypes.arrayOf(PropTypes.object),
+  phone: PropTypes.string,
+  // socials: PropTypes.arrayOf(PropTypes.object),
   menus: PropTypes.arrayOf(PropTypes.object),
   copyright: PropTypes.node,
 };

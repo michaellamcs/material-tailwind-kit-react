@@ -12,12 +12,12 @@ import {
 import { UsersIcon } from "@heroicons/react/24/solid";
 import { PageTitle, Footer } from "@/widgets/layout";
 import { FeatureCard, TeamCard } from "@/widgets/cards";
-import { featuresData, teamData, contactData } from "@/data";
+import { featuresData, serviceData, contactData } from "@/data";
 
 export function Home() {
   return (
     <>
-      <div className="relative flex h-screen content-center items-center justify-center pt-16 pb-32">
+      <div className="relative flex h-screen content-center items-center justify-center pb-32 pt-16">
         <div className="absolute top-0 h-full w-full bg-[url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80')] bg-cover bg-center" />
         <div className="absolute top-0 h-full w-full bg-black/75 bg-cover bg-center" />
         <div className="max-w-8xl container relative mx-auto">
@@ -28,12 +28,10 @@ export function Home() {
                 color="white"
                 className="mb-6 font-black"
               >
-                Your story starts with us.
+                石籬惠安護老院
               </Typography>
               <Typography variant="lead" color="white" className="opacity-80">
-                This is a simple example of a Landing Page you can build using
-                Material Tailwind. It features multiple components based on the
-                Tailwind CSS and Material Design by Google.
+                提供優質院舍服務，協助長者滿足生活需要，提升長者生活質素，讓老人家有尊嚴地在院舍安享歡愉的晚年。
               </Typography>
             </div>
           </div>
@@ -64,19 +62,25 @@ export function Home() {
                 className="mb-3 font-bold"
                 color="blue-gray"
               >
-                Working with us is a pleasure
+                全方位專業護理
               </Typography>
               <Typography className="mb-8 font-normal text-blue-gray-500">
-                Don't let your uses guess by attaching tooltips and popoves to
-                any element. Just make sure you enable them first via
-                JavaScript.
+                -
+                我們團隊包括西醫、護士、物理治療師、言語治療師及職業治療師等，為長者設計個人照顧計劃，提供專業治療服務。
                 <br />
                 <br />
-                The kit comes with three pre-built pages to help you get started
-                faster. You can change the text and images and you're good to
-                go. Just make sure you enable them first via JavaScript.
+                -
+                提供護理評估、執藥、核派藥、量度生命表徵、協助沐浴、餵飯、換尿片、血糖測試、胰島素注射、洗傷口、鼻胃管護理、尿喉護理等。
+                <br />
+                <br />
+                -
+                由院舍設計餐單，提供每日五餐膳食，即日新鮮烹調，備有常餐、碎餐、粥餐及糊餐，同時特制糖尿餐、低普林餐及低鹽餐。
+                <br />
+                <br />
+                -
+                提供專業輔導服務、情緒支援服務護老者支援服務、多元化的小組活動，豐富長者晚年生活。
               </Typography>
-              <Button variant="outlined">read more</Button>
+              {/* <Button variant="outlined">read more</Button> */}
             </div>
             <div className="mx-auto mt-24 flex w-full justify-center px-4 md:w-4/12 lg:mt-0">
               <Card className="shadow-lg shadow-gray-500/10">
@@ -93,12 +97,10 @@ export function Home() {
                     color="blue-gray"
                     className="mb-3 font-bold"
                   >
-                    Top Notch Services
+                    適切照顧和護理
                   </Typography>
                   <Typography className="font-normal text-blue-gray-500">
-                    The Arctic Ocean freezes every winter and much of the
-                    sea-ice then thaws every summer, and that process will
-                    continue whatever happens.
+                    透過保建員及護理員細緻的照顧、親切的關懷，令長者歡悅不息，體驗「活著就是精彩」。
                   </Typography>
                 </CardBody>
               </Card>
@@ -106,42 +108,32 @@ export function Home() {
           </div>
         </div>
       </section>
-      <section className="px-4 pt-20 pb-48">
+      <section className="px-4 pb-48 pt-20">
         <div className="container mx-auto">
-          <PageTitle heading="Here are our heroes">
-            According to the National Oceanic and Atmospheric Administration,
-            Ted, Scambos, NSIDClead scentist, puts the potentially record
-            maximum.
+          <PageTitle heading="我們的服務">
+            完善的安老服務可讓長者得到妥善照顧，令家人放心，老人家生活開心。
           </PageTitle>
           <div className="mt-24 grid grid-cols-1 gap-12 gap-x-24 md:grid-cols-2 xl:grid-cols-4">
-            {teamData.map(({ img, name, position, socials }) => (
+            {serviceData.map(({ img, name, description }) => (
               <TeamCard
                 key={name}
                 img={img}
                 name={name}
-                position={position}
-                socials={
-                  <div className="flex items-center gap-2">
-                    {socials.map(({ color, name }) => (
-                      <IconButton key={name} color={color} variant="text">
-                        <i className={`fa-brands text-lg fa-${name}`} />
-                      </IconButton>
-                    ))}
-                  </div>
-                }
+                description={description}
               />
             ))}
           </div>
         </div>
       </section>
-      <section className="relative bg-blue-gray-50/50 py-24 px-4">
+
+      {/* <section className="relative bg-blue-gray-50/50 px-4 py-24">
         <div className="container mx-auto">
           <PageTitle heading="Build something">
             Put the potentially record low maximum sea ice extent tihs year down
             to low ice. According to the National Oceanic and Atmospheric
             Administration, Ted, Scambos.
           </PageTitle>
-          <div className="mx-auto mt-20 mb-48 grid max-w-5xl grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto mb-48 mt-20 grid max-w-5xl grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-3">
             {contactData.map(({ title, icon, description }) => (
               <Card
                 key={title}
@@ -177,7 +169,8 @@ export function Home() {
             </Button>
           </form>
         </div>
-      </section>
+      </section> */}
+      
       <div className="bg-blue-gray-50/50">
         <Footer />
       </div>
